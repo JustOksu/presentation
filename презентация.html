@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Медицина майбутнього: де людина важливіша за технології</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            overflow: hidden;
+        }
+
+        .presentation-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide {
+            width: 90%;
+            max-width: 1200px;
+            height: 80%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 60px;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            animation: slideIn 0.8s ease-out;
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .slide h1 {
+            font-size: 3.5rem;
+            margin-bottom: 40px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.2;
+        }
+
+        .slide h2 {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            color: #ffdb58;
+        }
+
+        .slide h3 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: #ff6b6b;
+        }
+
+        .slide p {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            max-width: 900px;
+        }
+
+        .slide .large-text {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #4ecdc4;
+        }
+
+        .slide .highlight {
+            color: #ffdb58;
+            font-weight: bold;
+        }
+
+        .slide .statistic {
+            font-size: 3rem;
+            color: #ff6b6b;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot.active {
+            background: #4ecdc4;
+            transform: scale(1.3);
+        }
+
+        .slide-counter {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            font-size: 1.2rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 20px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .instructions {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .two-columns {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+        .tech-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .heart-icon {
+            font-size: 4rem;
+            color: #ff6b6b;
+            margin-bottom: 20px;
+        }
+
+        .formula {
+            font-size: 4rem;
+            color: #4ecdc4;
+            font-weight: bold;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Slide 1: Title -->
+        <div class="slide active">
+            <h1>Медицина майбутнього:</h1>
+            <h1 style="margin-top: -20px;">де людина важливіша за технології</h1>
+            <p style="margin-top: 40px; font-size: 1.2rem; opacity: 0.8;">TED-виступ</p>
+        </div>
+
+        <!-- Slide 2: Hook -->
+        <div class="slide">
+            <div class="statistic">Кожні 36 секунд</div>
+            <p class="large-text">штучний інтелект рятує чиєсь життя</p>
+            <p style="margin-top: 40px;">виявляючи хворобу на тижні раніше за лікарів</p>
+            <div style="margin: 40px 0; font-size: 2rem;">АЛЕ...</div>
+            <div class="statistic">Кожні 36 секунд</div>
+            <p class="large-text">хтось помирає від самотності</p>
+            <p>в лікарняній палаті</p>
+        </div>
+
+        <!-- Slide 3: Technologies -->
+        <div class="slide">
+            <h2>🤖 Потужність технологій</h2>
+            <div style="text-align: left; max-width: 800px;">
+                <p>🔹 <span class="highlight">Робот Da Vinci</span> - операції без тремтіння рук</p>
+                <p>🔹 <span class="highlight">ШІ аналізує 100 млн</span> медичних записів за хвилину</p>
+                <p>🔹 <span class="highlight">Генна терапія</span> замінює хворі клітини здоровими</p>
+            </div>
+            <p class="large-text" style="margin-top: 40px; color: #4ecdc4;">Це вже рятує тисячі життів щодня!</p>
+        </div>
+
+        <!-- Slide 4: Human Factor -->
+        <div class="slide">
+            <h2>❤️ Сила людського фактору</h2>
+            <div class="statistic">30%</div>
+            <p class="large-text">швидше одужують пацієнти</p>
+            <p>які отримують емоційну підтримку</p>
+            <p style="margin-top: 30px; font-style: italic;">(Дослідження Стенфорда)</p>
+            <p style="margin-top: 40px;">Страх і стрес пригнічують імунну систему<br><span class="highlight">сильніше за будь-який вірус</span></p>
+        </div>
+
+        <!-- Slide 5: Synergy -->
+        <div class="slide">
+            <h2>⚡ Синергія</h2>
+            <div class="two-columns">
+                <div class="column">
+                    <div class="tech-icon">🤖</div>
+                    <p>Технології</p>
+                </div>
+                <div style="font-size: 3rem;">+</div>
+                <div class="column">
+                    <div class="heart-icon">❤️</div>
+                    <p>Людяність</p>
+                </div>
+            </div>
+            <div class="formula">1 + 1 = 10</div>
+            <p class="large-text">У медицині це не математика, а магія!</p>
+        </div>
+
+        <!-- Slide 6: Examples -->
+        <div class="slide">
+            <h3>Коли починається магія:</h3>
+            <div style="text-align: left; max-width: 900px; margin-top: 40px;">
+                <p>💡 Фахівець з генної інженерії <span class="highlight">пояснює складне простими словами</span></p>
+                <p>🤝 Хірург-робототехнік <span class="highlight">бере пацієнта за руку</span> перед операцією</p>
+                <p>🧠 ШІ допомагає знайти ідеальне лікування, а лікар допомагає <span class="highlight">повірити в успіх</span></p>
+            </div>
+        </div>
+
+        <!-- Slide 7: Conclusion -->
+        <div class="slide">
+            <h2>Медицина майбутнього вже тут!</h2>
+            <p class="large-text" style="margin: 40px 0;">Технології дають нам <span class="highlight">суперсили</span><br>
+            Людяність дає нам <span class="highlight">суперціль</span></p>
+            <div style="margin-top: 50px;">
+                <p>Якщо ви розробляєте ШІ → <span class="highlight">думайте про пацієнтів</span></p>
+                <p>Якщо ви лікар → <span class="highlight">використовуйте кожен інструмент</span></p>
+            </div>
+        </div>
+
+        <!-- Slide 8: Final -->
+        <div class="slide">
+            <h1 style="margin-bottom: 60px;">Разом ми створимо медицину,</h1>
+            <h1 style="background: linear-gradient(45deg, #4ecdc4, #ffdb58); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">яка не просто лікує —</h1>
+            <h1 style="background: linear-gradient(45deg, #ff6b6b, #4ecdc4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top: 20px;">а повертає людям віру в чудеса!</h1>
+            <p style="margin-top: 60px; font-size: 1.5rem; opacity: 0.8;">Дякую за увагу! 🙏</p>
+        </div>
+    </div>
+
+    <div class="slide-counter">
+        <span id="currentSlide">1</span> / <span id="totalSlides">8</span>
+    </div>
+
+    <div class="navigation" id="navigation">
+        <!-- Dots will be generated by JavaScript -->
+    </div>
+
+    <div class="instructions">
+        Навігація: стрілки ← → або пробіл
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        // Generate navigation dots
+        const navigation = document.getElementById('navigation');
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'nav-dot';
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i));
+            navigation.appendChild(dot);
+        }
+
+        const navDots = document.querySelectorAll('.nav-dot');
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            navDots[currentSlide].classList.remove('active');
+            
+            currentSlide = (n + totalSlides) % totalSlides;
+            
+            slides[currentSlide].classList.add('active');
+            navDots[currentSlide].classList.add('active');
+            
+            document.getElementById('currentSlide').textContent = currentSlide + 1;
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        function goToSlide(n) {
+            showSlide(n);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            switch(e.key) {
+                case 'ArrowRight':
+                case ' ':
+                case 'PageDown':
+                    e.preventDefault();
+                    nextSlide();
+                    break;
+                case 'ArrowLeft':
+                case 'PageUp':
+                    e.preventDefault();
+                    prevSlide();
+                    break;
+                case 'Home':
+                    e.preventDefault();
+                    goToSlide(0);
+                    break;
+                case 'End':
+                    e.preventDefault();
+                    goToSlide(totalSlides - 1);
+                    break;
+            }
+        });
+
+        // Touch/swipe support for mobile
+        let startX = 0;
+        let startY = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+        });
+
+        document.addEventListener('touchend', (e) => {
+            if (!startX || !startY) return;
+
+            const endX = e.changedTouches[0].clientX;
+            const endY = e.changedTouches[0].clientY;
+            
+            const diffX = startX - endX;
+            const diffY = startY - endY;
+
+            if (Math.abs(diffX) > Math.abs(diffY)) {
+                if (Math.abs(diffX) > 50) {
+                    if (diffX > 0) {
+                        nextSlide();
+                    } else {
+                        prevSlide();
+                    }
+                }
+            }
+
+            startX = 0;
+            startY = 0;
+        });
+
+        // Initialize
+        document.getElementById('totalSlides').textContent = totalSlides;
+    </script>
+</body>
+</html>
